@@ -1,10 +1,6 @@
 package server
 
-import (
-	"net/http"
-)
-
 func (o *Server)InitRouter(){
-	http.HandleFunc("/upload",o.HandleUpload)
-	http.HandleFunc("/download",o.HandleDownload)
+	o.serveMux.HandleFunc("/upload",o.HandleUpload)
+	o.serveMux.HandleFunc("/download",o.HandleDownload)
 }
